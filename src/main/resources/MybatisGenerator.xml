@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-	<properties resource="application-test.properties" />
+	<properties resource="application.properties" />
 
 	<!-- context:生成一组对象的环境 id:必选，上下文id，用于在生成错误时提示 defaultModelType:指定生成对象的样式 
 		1，conditional：类似hierarchical； 2，flat：所有内容（主键，blob）等全部生成在一个对象中； 3，hierarchical：主键生成一个XXKey对象(key 
@@ -15,22 +15,26 @@
 			<!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
 			<property name="caseSensitive" value="true" />
 		</plugin>
-		<jdbcConnection driverClass="${druid.driver-class}"
-			connectionURL="${druid.url}" userId="${druid.username}" password="${druid.password}">
+		<jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+			connectionURL="${spring.datasource.url}" userId="${spring.datasource.username}" password="${spring.datasource.password}">
 		</jdbcConnection>
-		<javaModelGenerator targetPackage="com.ixinnuo.financial.model"
-			targetProject="D:\eclipse-neon-workspace\client\src\main\java">
-			<property name="enableSubPackages" value="true" />
+		<!-- model -->
+		<javaModelGenerator targetPackage="spring.boot.mybatis.apply"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" /><!-- 在targetPackage下按表对象自动创建业务包 -->
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
-		<sqlMapGenerator targetPackage="mapper"
-			targetProject="D:\eclipse-neon-workspace\client\src\main\resources">
+		<!-- xml文件 -->
+		<sqlMapGenerator targetPackage="spring.boot.mybatis.apply"
+			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
-		<javaClientGenerator targetPackage="com.ixinnuo.financial.dao.mysql"
-			type="XMLMAPPER" targetProject="D:\eclipse-neon-workspace\client\src\main\java">
+		<!-- dao -->
+		<javaClientGenerator targetPackage="spring.boot.mybatis.apply"
+			type="XMLMAPPER" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true"/>
 		</javaClientGenerator>
-		<table tableName="t_market" domainObjectName="Market"
+		<table tableName="apply_info" domainObjectName="ApplyInfo"
 			enableSelectByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableCountByExample="false">
 			<!--<property name="useActualColumnNames" value="true"></property> 不使用驼峰式，严格按字段名 -->

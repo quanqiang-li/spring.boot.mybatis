@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.boot.mybatis.apply.ApplyInfoMapper">
+  <resultMap id="BaseResultMap" type="spring.boot.mybatis.apply.ApplyInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_update" jdbcType="TIMESTAMP" property="gmtUpdate" />
+    <result column="apply_no" jdbcType="CHAR" property="applyNo" />
+    <result column="user_uuk" jdbcType="VARCHAR" property="userUuk" />
+    <result column="nsrsbh" jdbcType="VARCHAR" property="nsrsbh" />
+    <result column="etr_name" jdbcType="VARCHAR" property="etrName" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="loan_term" jdbcType="INTEGER" property="loanTerm" />
+    <result column="loan_amount" jdbcType="DOUBLE" property="loanAmount" />
+    <result column="contact_mobile" jdbcType="VARCHAR" property="contactMobile" />
+    <result column="contact_person" jdbcType="VARCHAR" property="contactPerson" />
+    <result column="data_source" jdbcType="VARCHAR" property="dataSource" />
+    <result column="mcode" jdbcType="VARCHAR" property="mcode" />
+    <result column="bank_id" jdbcType="VARCHAR" property="bankId" />
+    <result column="bank_code" jdbcType="VARCHAR" property="bankCode" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="area_code" jdbcType="VARCHAR" property="areaCode" />
+    <result column="area_name" jdbcType="VARCHAR" property="areaName" />
+    <result column="status_code" jdbcType="VARCHAR" property="statusCode" />
+    <result column="status_name" jdbcType="VARCHAR" property="statusName" />
+    <result column="permit_loan_term" jdbcType="INTEGER" property="permitLoanTerm" />
+    <result column="permit_loan_amount" jdbcType="DOUBLE" property="permitLoanAmount" />
+    <result column="access_template_id" jdbcType="INTEGER" property="accessTemplateId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="spring.boot.mybatis.apply.ApplyInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="input_page_one" jdbcType="LONGVARCHAR" property="inputPageOne" />
+    <result column="input_page_two" jdbcType="LONGVARCHAR" property="inputPageTwo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, gmt_create, gmt_update, apply_no, user_uuk, nsrsbh, etr_name, product_id, product_name, 
+    loan_term, loan_amount, contact_mobile, contact_person, data_source, mcode, bank_id, 
+    bank_code, bank_name, area_code, area_name, status_code, status_name, permit_loan_term, 
+    permit_loan_amount, access_template_id
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    input_page_one, input_page_two
+  </sql>
+</mapper>
