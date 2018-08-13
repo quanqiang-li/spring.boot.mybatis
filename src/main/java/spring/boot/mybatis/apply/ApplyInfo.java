@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "apply_info")
 public class ApplyInfo {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "gmt_create")
